@@ -19,10 +19,8 @@
         <div class='span15 offset1'>{% block header %}{% include 'ElecChicagoBundle:Default:header.twig.html' %}{% endblock %}</div>
     </div>
     <div class-'row'>
-        <div class='span4 offset1'>{% block sidebar %}{% endblock %}</div>
-
-        <div class='span11'>{% block content %}{% endblock %}</div>
-
+        <div class='span11 offset1'>{% block content %}{% endblock %}</div>
+        <div class='span4'>{% block sidebar %}{% endblock %}</div>
     </div>
 
     </body>

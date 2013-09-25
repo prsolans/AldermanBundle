@@ -18,7 +18,7 @@ use Elec\ChicagoBundle\Form\AldermanFilterType;
 /**
  * Alderman controller.
  *
- * @Route("/alderman")
+ * @Route("/ward")
  */
 class AldermanController extends Controller
 {

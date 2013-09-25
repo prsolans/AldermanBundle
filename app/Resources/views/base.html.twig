@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %} - Know Your Alderman</title>
+        {% block stylesheets %}
+        <link href="{{ asset('bundles/jordillonchcrudgenerator/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block javascripts %}
+        <script src="http://codeorigin.jquery.com/jquery-2.0.3.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+ <div class='row'>
+        <div class='span15 offset1'>{% block header %}{% include 'ElecChicagoBundle:Default:header.twig.html' %}{% endblock %}</div>
+    </div>
+    <div class-'row'>
+        <div class='span4 offset1'>{% block sidebar %}{% endblock %}</div>
+
+        <div class='span11'>{% block content %}{% endblock %}</div>
+
+    </div>
+
+    </body>
+</html>

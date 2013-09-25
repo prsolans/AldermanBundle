@@ -1,0 +1,5 @@
+elec_chicago:
+    resource: "@ElecChicagoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

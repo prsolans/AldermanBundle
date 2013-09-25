@@ -1,0 +1,33 @@
+{% extends('::base.html.twig') %}
+{% block title %} {{alderman.name}} {% endblock %}
+{% block content %}
+
+<h1>Alderman {{ alderman.name }}</h1>
+<h3>Ward {{ alderman.Ward.location }}</h3>
+
+<script type="text/javascript">
+
+    var feed = 'http://gdata.youtube.com/feeds/api/videos?q=Alderman {{alderman.name}}&max-results=5&v=2&alt=json';
+    $.getJSON(feed, function(data){
+      var video = data.feed.entry[0].content.src;
+      var title = data.feed.entry[0].title.$t;
+      var vidDate = new Date(data.feed.entry[0].published.$t);
+
+      console.log(vidDate);
+      var player = '<iframe id="ytplayer" type="text/html" width="640" height="360" src="';
+      player += video;
+      player += '" frameborder="0" allowfullscreen>';      
+    
+      document.getElementById("videos").innerHTML = player;
+      document.getElementById("title").innerHTML = title;
+      document.getElementById("vidDate").innerHTML = vidDate;
+    });
+
+</script>
+
+
+<div id='videos'></div>
+<h4 id='title'></h4>
+<h5 id='vidDate'></h5>
+{% endblock %}
+
